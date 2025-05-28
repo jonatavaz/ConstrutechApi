@@ -1,0 +1,6 @@
+@Construtech.Api_HostAddress = http://localhost:5234
+
+GET {{Construtech.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
