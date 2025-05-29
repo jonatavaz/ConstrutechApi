@@ -1,21 +1,46 @@
 [
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0",
-    "RelativePath": "weatherforecast",
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_1",
+    "RelativePath": "contrutechApi/pessoa",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pessoaDTO",
+        "Type": "DTO.PessoaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
+    "RelativePath": "contrutechApi/pessoa/{CodPessoa}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "WeatherForecast[]",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
+        "Name": "CodPessoa",
+        "Type": "System.Int16",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

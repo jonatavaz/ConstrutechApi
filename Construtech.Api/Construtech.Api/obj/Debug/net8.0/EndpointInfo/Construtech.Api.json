@@ -5,25 +5,47 @@
     "version": "1.0"
   },
   "paths": {
-    "/weatherforecast": {
+    "/contrutechApi/pessoa/{CodPessoa}": {
       "get": {
         "tags": [
           "Construtech.Api"
         ],
-        "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "CodPessoa",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/contrutechApi/pessoa": {
+      "post": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PessoaDTO"
               }
             }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -31,25 +53,20 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "PessoaDTO": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "summary": {
+          "nome": {
             "type": "string",
             "nullable": true
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "nascimento": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
