@@ -5,19 +5,26 @@
     "version": "1.0"
   },
   "paths": {
-    "/contrutechApi/pessoa/{CodPessoa}": {
+    "/contrutechApi/GetPessoa/{Email, Senha}": {
       "get": {
         "tags": [
           "Construtech.Api"
         ],
         "parameters": [
           {
-            "name": "CodPessoa",
-            "in": "path",
+            "name": "Email",
+            "in": "query",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          },
+          {
+            "name": "Senha",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -28,7 +35,7 @@
         }
       }
     },
-    "/contrutechApi/pessoa": {
+    "/contrutechApi/InsertPessoa": {
       "post": {
         "tags": [
           "Construtech.Api"
@@ -37,7 +44,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PessoaDTO"
+                "$ref": "#/components/schemas/Pessoa"
               }
             }
           },
@@ -53,9 +60,39 @@
   },
   "components": {
     "schemas": {
-      "PessoaDTO": {
+      "Contato": {
         "type": "object",
         "properties": {
+          "codContato": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codPessoa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "telefone1": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone2": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pessoa": {
+        "type": "object",
+        "properties": {
+          "codPessoa": {
+            "type": "integer",
+            "format": "int32"
+          },
           "nome": {
             "type": "string",
             "nullable": true
@@ -67,6 +104,36 @@
           "nascimento": {
             "type": "string",
             "nullable": true
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "contato": {
+            "$ref": "#/components/schemas/Contato"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "codUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codPessoa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "senha": {
+            "type": "string",
+            "nullable": true
+          },
+          "administrador": {
+            "type": "boolean"
+          },
+          "ativo": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

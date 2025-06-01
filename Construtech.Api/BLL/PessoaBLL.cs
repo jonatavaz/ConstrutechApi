@@ -13,20 +13,13 @@ namespace BLL
             dao = new PessoaDAO();
         }
 
-        public async Task<Pessoa> GetPessoa(short CodPessoa)
+        public async Task<Pessoa> GetPessoa(string Email, string Senha)
         {
-            return await dao.GetPessoa(CodPessoa);
+            return await dao.GetPessoa(Email, Senha);
         }
 
-        public async Task<bool> InsertPessoa(PessoaDTO pessoaDTO)
-        {
-            var pessoa = new Pessoa
-            {
-                Nome = pessoaDTO.Nome,
-                CPF = pessoaDTO.CPF,
-                Nascimento = pessoaDTO.Nascimento
-            };
-
+        public async Task<bool> InsertPessoa(Pessoa pessoa)
+        { 
             return await dao.InsertPessoa(pessoa);
         }
     }

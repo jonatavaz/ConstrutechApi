@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("POJO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93a1b90ada914b58d27a4cd7689683d0cd74f6aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c40bbac09a4dc739f3ed0e2cfb3425c7daaa643c")]
 [assembly: System.Reflection.AssemblyProductAttribute("POJO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("POJO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

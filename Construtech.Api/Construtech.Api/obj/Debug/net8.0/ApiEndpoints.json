@@ -1,15 +1,20 @@
 [
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
-    "Method": "\u003CConstrutechRoutes\u003Eb__0_1",
-    "RelativePath": "contrutechApi/pessoa",
-    "HttpMethod": "POST",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
+    "RelativePath": "contrutechApi/GetPessoa/{Email, Senha}",
+    "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pessoaDTO",
-        "Type": "DTO.PessoaDTO",
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Senha",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -23,15 +28,15 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
-    "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
-    "RelativePath": "contrutechApi/pessoa/{CodPessoa}",
-    "HttpMethod": "GET",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_1",
+    "RelativePath": "contrutechApi/InsertPessoa",
+    "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CodPessoa",
-        "Type": "System.Int16",
+        "Name": "pessoa",
+        "Type": "POJO.Pessoa",
         "IsRequired": true
       }
     ],

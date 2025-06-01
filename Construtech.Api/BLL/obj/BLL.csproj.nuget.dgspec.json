@@ -133,9 +133,9 @@
               "target": "Package",
               "version": "[2.1.66, )"
             },
-            "System.Data.SqlClient": {
+            "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.9.0, )"
+              "version": "[6.0.2, )"
             }
           },
           "imports": [

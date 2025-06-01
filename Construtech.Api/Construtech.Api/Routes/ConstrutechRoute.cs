@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using POJO;
 
 namespace Construtech.Api.Routes
 {
@@ -9,16 +10,16 @@ namespace Construtech.Api.Routes
         {
             var route = app.MapGroup("contrutechApi");
 
-            route.MapGet("/pessoa/{CodPessoa}", async (short CodPessoa, PessoaBLL pBll) =>
+            route.MapGet("/GetPessoa/{Email, Senha}", async (string Email, string Senha, PessoaBLL _pBll) =>
             {
-                var pessoa = await pBll.GetPessoa(CodPessoa);
+                var pessoa = await _pBll.GetPessoa(Email, Senha);
                 return pessoa != null ? Results.Ok(pessoa) : Results.NotFound();
             });
 
-            route.MapPost("/pessoa", async (PessoaDTO pessoaDTO, PessoaBLL pBll) =>
+            route.MapPost("/InsertPessoa", async (Pessoa pessoa, PessoaBLL _pBll) =>
             {
-                var pessoa = await pBll.InsertPessoa(pessoaDTO);
-                return pessoa ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
+                var sucesso = await _pBll.InsertPessoa(pessoa);
+                return sucesso ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
             });
         }
     }

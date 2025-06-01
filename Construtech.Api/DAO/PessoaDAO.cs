@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Data.SqlClient;
 using POJO;
 
 namespace DAO
 {
     public class PessoaDAO
     {
-        public async Task<Pessoa> GetPessoa(short CodPessoa)
+        public async Task<Pessoa> GetPessoa(string Email, string Senha)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
-            string sql = @"select * from Pessoa WHERE CodPessoa = @CodPessoa";
+            string sql = @"SELECT * FROM Pessoa P INNER JOIN Usuario U ON P.CodPessoa = U.CodPessoa
+                            INNER JOIN Contato C ON P.CodPessoa = C.CodPessoa
+                            WHERE C.Email = @Email AND U.Senha = @Senha";
 
             DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@CodPessoa", CodPessoa);
+            parameters.Add("@Email", Email);
+            parameters.Add("@Senha", Senha);
 
             try
             {
@@ -40,13 +43,18 @@ namespace DAO
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
-            string sql = @"INSERT INTO Pessoa(Nome, CPF, Nascimento, DataHora_Cadastro, CodPessoa_Cadastro)
-                            VALUES(@Nome, @CPF, @Nascimento, GETDATE(), 0)";
+            string sql = @"EXEC PR_CadastrarPessoa @Nome, @CPF, @Nascimento, @CodPessoa_Cadastro, @Senha, @Ativo, @Administrador, @Email, @Telefone1";
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@Nome", pessoa.Nome);
             parameters.Add("@CPF", pessoa.CPF);
             parameters.Add("@Nascimento", pessoa.Nascimento);
+            parameters.Add("@CodPessoa_Cadastro", 0);
+            parameters.Add("@Senha", pessoa.Usuario.Senha);
+            parameters.Add("@Ativo", 1);
+            parameters.Add("@Administrador", 1);
+            parameters.Add("@Email", pessoa.Contato.Email);
+            parameters.Add("@Telefone1", pessoa.Contato.Telefone1);
 
             try
             {
