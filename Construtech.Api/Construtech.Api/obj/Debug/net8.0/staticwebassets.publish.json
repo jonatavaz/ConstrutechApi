@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "zNE9V6SJfQpWEwGXW9dopI1eVgJmhLv5Fr7Wga29Cwg=",
+  "Source": "Construtech.Api",
+  "BasePath": "_content/Construtech.Api",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

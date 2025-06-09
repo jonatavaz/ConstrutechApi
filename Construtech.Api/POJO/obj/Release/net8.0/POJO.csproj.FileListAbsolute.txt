@@ -1,0 +1,12 @@
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\bin\Release\net8.0\POJO.deps.json
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\bin\Release\net8.0\POJO.dll
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\bin\Release\net8.0\POJO.pdb
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.AssemblyInfoInputs.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.AssemblyInfo.cs
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.csproj.CoreCompileInputs.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.sourcelink.json
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.dll
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\refint\POJO.dll
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\POJO.pdb
+C:\Sistemas\ConstrutechApi\Construtech.Api\POJO\obj\Release\net8.0\ref\POJO.dll

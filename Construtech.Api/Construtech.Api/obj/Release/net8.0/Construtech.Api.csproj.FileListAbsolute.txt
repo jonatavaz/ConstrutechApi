@@ -1,0 +1,7 @@
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.csproj.AssemblyReference.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.AssemblyInfoInputs.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.AssemblyInfo.cs
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.csproj.CoreCompileInputs.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Release\net8.0\Construtech.Api.sourcelink.json

@@ -767,7 +767,6 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DAO": "1.0.0",
-          "DTO": "1.0.0",
           "POJO": "1.0.0"
         },
         "compile": {
@@ -790,16 +789,6 @@
         },
         "runtime": {
           "bin/placeholder/DAO.dll": {}
-        }
-      },
-      "DTO/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/DTO.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DTO.dll": {}
         }
       },
       "POJO/1.0.0": {
@@ -2220,11 +2209,6 @@
       "path": "../DAO/DAO.csproj",
       "msbuildProject": "../DAO/DAO.csproj"
     },
-    "DTO/1.0.0": {
-      "type": "project",
-      "path": "../DTO/DTO.csproj",
-      "msbuildProject": "../DTO/DTO.csproj"
-    },
     "POJO/1.0.0": {
       "type": "project",
       "path": "../POJO/POJO.csproj",
@@ -2240,7 +2224,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jonata\\.nuget\\packages\\": {},
+    "C:\\Users\\jhona\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -2249,14 +2233,14 @@
       "projectUniqueName": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\Construtech.Api\\Construtech.Api.csproj",
       "projectName": "Construtech.Api",
       "projectPath": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\Construtech.Api\\Construtech.Api.csproj",
-      "packagesPath": "C:\\Users\\Jonata\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\jhona\\.nuget\\packages\\",
       "outputPath": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\Construtech.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jonata\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jhona\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2287,7 +2271,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -2325,7 +2309,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
