@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Construtech.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db1e6e7202f202e876585e45158b9143f68d4e6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5013f20dddb716d3429d45a65c13b75b30b0f55")]
 [assembly: System.Reflection.AssemblyProductAttribute("Construtech.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Construtech.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
