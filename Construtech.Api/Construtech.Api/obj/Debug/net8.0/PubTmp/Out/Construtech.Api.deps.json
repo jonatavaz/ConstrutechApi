@@ -477,7 +477,6 @@
       "BLL/1.0.0": {
         "dependencies": {
           "DAO": "1.0.0",
-          "DTO": "1.0.0",
           "POJO": "1.0.0"
         },
         "runtime": {
@@ -495,14 +494,6 @@
         },
         "runtime": {
           "DAO.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "DTO/1.0.0": {
-        "runtime": {
-          "DTO.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -831,11 +822,6 @@
       "sha512": ""
     },
     "DAO/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

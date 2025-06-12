@@ -58,9 +58,7 @@ C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubT
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\BLL.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\DAO.dll
-C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\DTO.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\POJO.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\BLL.pdb
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\DAO.pdb
-C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\DTO.pdb
 C:\Sistemas\ConstrutechApi\Construtech.Api\Construtech.Api\obj\Debug\net8.0\PubTmp\Out\POJO.pdb

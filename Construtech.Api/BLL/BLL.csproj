@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj" />
-    <ProjectReference Include="..\DTO\DTO.csproj" />
     <ProjectReference Include="..\POJO\POJO.csproj" />
   </ItemGroup>
 

@@ -16,5 +16,3 @@ C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\obj\Debug\net8.0\BLL.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\obj\Debug\net8.0\refint\BLL.dll
 C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\obj\Debug\net8.0\BLL.pdb
 C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\obj\Debug\net8.0\ref\BLL.dll
-C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\bin\Debug\net8.0\DTO.dll
-C:\Sistemas\ConstrutechApi\Construtech.Api\BLL\bin\Debug\net8.0\DTO.pdb

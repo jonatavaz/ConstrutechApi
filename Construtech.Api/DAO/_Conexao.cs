@@ -9,7 +9,7 @@
                 string connectionString;
 
                 #if DEBUG
-                    connectionString = @"Server=sqldb-climimed-dev.database.windows.net;Database=Construtech;User ID=U_Desenvolvimento;Password=Claudia1976$;Encrypt=True;TrustServerCertificate=true;";
+                    connectionString = @"Server=20.64.251.243;Database=Construtech;User ID=jonatavaz;Password=Claudia1976$;Encrypt=True;TrustServerCertificate=true;";
                 #endif  
 
                 return connectionString;
