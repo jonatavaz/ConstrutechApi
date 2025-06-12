@@ -7,7 +7,7 @@ namespace Construtech.Api.Routes
     {
         public static void ConstrutechRoutes(this WebApplication app)
         {
-            var route = app.MapGroup("contrutechApi");
+            var route = app.MapGroup("construtechApi");
 
             route.MapGet("/GetPessoa/{Email, Senha}", async (string Email, string Senha, PessoaBLL _pBll) =>
             {
@@ -17,6 +17,9 @@ namespace Construtech.Api.Routes
 
             route.MapPost("/InsertPessoa", async (Pessoa pessoa, PessoaBLL _pBll) =>
             {
+                if (pessoa is null || pessoa.Usuario is null || pessoa.Contato is null)                
+                    return Results.BadRequest("Objeto Inválido");
+                
                 var sucesso = await _pBll.InsertPessoa(pessoa);
                 return sucesso ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
             });

@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/contrutechApi/GetPessoa/{Email, Senha}": {
+    "/construtechApi/GetPessoa/{Email, Senha}": {
       "get": {
         "tags": [
           "Construtech.Api"
@@ -35,7 +35,7 @@
         }
       }
     },
-    "/contrutechApi/InsertPessoa": {
+    "/construtechApi/InsertPessoa": {
       "post": {
         "tags": [
           "Construtech.Api"
@@ -72,10 +72,6 @@
             "format": "int32"
           },
           "telefone1": {
-            "type": "string",
-            "nullable": true
-          },
-          "telefone2": {
             "type": "string",
             "nullable": true
           },

@@ -11,7 +11,6 @@ namespace POJO
         public int CodContato { get; set; }
         public int CodPessoa { get; set; }
         public string Telefone1 { get; set; }
-        public string Telefone2 { get; set; }
         public string Email { get; set; }
     }
 }

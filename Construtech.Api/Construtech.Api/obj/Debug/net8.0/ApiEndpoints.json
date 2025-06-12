@@ -2,7 +2,7 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
-    "RelativePath": "contrutechApi/GetPessoa/{Email, Senha}",
+    "RelativePath": "construtechApi/GetPessoa/{Email, Senha}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -29,7 +29,7 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_1",
-    "RelativePath": "contrutechApi/InsertPessoa",
+    "RelativePath": "construtechApi/InsertPessoa",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
