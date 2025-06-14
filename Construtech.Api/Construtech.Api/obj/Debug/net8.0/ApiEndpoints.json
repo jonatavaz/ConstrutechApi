@@ -2,13 +2,13 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
-    "RelativePath": "construtechApi/GetPessoa/{Email, Senha}",
+    "RelativePath": "construtechApi/GetPessoa/{CPF, Senha}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Email",
+        "Name": "CPF",
         "Type": "System.String",
         "IsRequired": true
       },

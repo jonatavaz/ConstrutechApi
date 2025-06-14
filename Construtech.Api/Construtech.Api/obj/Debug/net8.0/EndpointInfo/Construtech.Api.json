@@ -5,14 +5,14 @@
     "version": "1.0"
   },
   "paths": {
-    "/construtechApi/GetPessoa/{Email, Senha}": {
+    "/construtechApi/GetPessoa/{CPF, Senha}": {
       "get": {
         "tags": [
           "Construtech.Api"
         ],
         "parameters": [
           {
-            "name": "Email",
+            "name": "CPF",
             "in": "query",
             "required": true,
             "schema": {

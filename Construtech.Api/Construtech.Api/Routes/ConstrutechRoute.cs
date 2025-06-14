@@ -9,9 +9,9 @@ namespace Construtech.Api.Routes
         {
             var route = app.MapGroup("construtechApi");
 
-            route.MapGet("/GetPessoa/{Email, Senha}", async (string Email, string Senha, PessoaBLL _pBll) =>
+            route.MapGet("/GetPessoa/{CPF, Senha}", async (string CPF, string Senha, PessoaBLL _pBll) =>
             {
-                var pessoa = await _pBll.GetPessoa(Email, Senha);
+                var pessoa = await _pBll.GetPessoa(CPF, Senha);
                 return pessoa != null ? Results.Ok(pessoa) : Results.NotFound();
             });
 
@@ -19,9 +19,10 @@ namespace Construtech.Api.Routes
             {
                 if (pessoa is null || pessoa.Usuario is null || pessoa.Contato is null)                
                     return Results.BadRequest("Objeto Inválido");
+
                 
                 var sucesso = await _pBll.InsertPessoa(pessoa);
-                return sucesso ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
+                return sucesso == -1 ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
             });
         }
     }

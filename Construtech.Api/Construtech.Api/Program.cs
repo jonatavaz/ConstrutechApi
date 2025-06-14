@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen();
 
 #region INJEÇÃO DE DEPENDÊNCIAS
 builder.Services.AddScoped<PessoaBLL>();
+builder.Services.AddScoped<UsuarioBLL>();
 #endregion
 
 var app = builder.Build();

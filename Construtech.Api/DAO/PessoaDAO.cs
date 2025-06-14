@@ -11,16 +11,16 @@ namespace DAO
 {
     public class PessoaDAO
     {
-        public async Task<Pessoa> GetPessoa(string Email, string Senha)
+        public async Task<Pessoa> GetPessoa(string CPF, string Senha)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
-            string sql = @"SELECT * FROM Pessoa P INNER JOIN Usuario U ON P.CodPessoa = U.CodPessoa
-                            INNER JOIN Contato C ON P.CodPessoa = C.CodPessoa
-                            WHERE C.Email = @Email AND U.Senha = @Senha";
+            string sql = @"SELECT * FROM Pessoa P 
+                                INNER JOIN Usuario U ON P.CodPessoa = U.CodPessoa
+                           WHERE P.CPF = @CPF AND U.Senha = @Senha";
 
             DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@Email", Email);
+            parameters.Add("@CPF", CPF);
             parameters.Add("@Senha", Senha);
 
             try
@@ -39,17 +39,43 @@ namespace DAO
             }
         }
 
-        public async Task<bool> InsertPessoa(Pessoa pessoa)
+        public async Task<Usuario> LoginCPF(string CPF)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
-            string sql = @"EXEC PR_CadastrarPessoa @Nome, @CPF, @Nascimento, @CodPessoa_Cadastro, @Senha, @Ativo, @Administrador, @Email, @Telefone1";
+            string sql = @"SELECT * FROM Usuario U
+                                INNER JOIN Pessoa P ON U.CodPessoa = P.CodPessoa
+                           WHERE P.CPF = @CPF";
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@CPF", CPF);
+
+            try
+            {
+                var result = await conexao.QueryFirstOrDefaultAsync<Usuario>(sql, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                string e = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public async Task<int> InsertPessoa(Pessoa pessoa)
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = @"EXEC PR_CadastrarPessoa @Nome, @CPF, @Nascimento, @Senha, @Ativo, @Administrador, @Email, @Telefone1";
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@Nome", pessoa.Nome);
             parameters.Add("@CPF", pessoa.CPF);
             parameters.Add("@Nascimento", pessoa.Nascimento);
-            parameters.Add("@CodPessoa_Cadastro", 0);
             parameters.Add("@Senha", pessoa.Usuario.Senha);
             parameters.Add("@Ativo", 1);
             parameters.Add("@Administrador", 1);
@@ -59,12 +85,12 @@ namespace DAO
             try
             {
                 var result = await conexao.ExecuteAsync(sql, parameters);
-                return true;
+                return result;
             }
             catch (Exception ex)
             {
                 string e = ex.Message;
-                return false;
+                return 0;
             }
             finally
             {
