@@ -56,6 +56,40 @@
           }
         }
       }
+    },
+    "/construtechApi/InsertObra": {
+      "post": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Obra"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/construtechApi/GetClientes": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -76,6 +110,44 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Obra": {
+        "type": "object",
+        "properties": {
+          "codObra": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "endereco": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "prazoExecucao": {
+            "type": "string",
+            "nullable": true
+          },
+          "estagioAtual": {
+            "type": "string",
+            "nullable": true
+          },
+          "detalhes": {
             "type": "string",
             "nullable": true
           }

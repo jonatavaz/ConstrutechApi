@@ -20,9 +20,24 @@ namespace Construtech.Api.Routes
                 if (pessoa is null || pessoa.Usuario is null || pessoa.Contato is null)                
                     return Results.BadRequest("Objeto Inválido");
 
-                
                 var sucesso = await _pBll.InsertPessoa(pessoa);
                 return sucesso == -1 ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
+            });
+
+            route.MapPost("/InsertObra", async (Obra obra, ObraBLL _oBll) =>
+            {
+                if (obra is null)
+                    return Results.BadRequest("Objeto Inválido");
+
+
+                var sucesso = await _oBll.InsertObra(obra);
+                return sucesso == true ? Results.Ok("Obra cadastrada com sucesso!") : Results.BadRequest("Erro ao cadastra a obra.");
+            });
+
+            route.MapGet("/GetClientes", async (ClienteBLL _cBll) =>
+            {
+                var clientes = await _cBll.GetListClientes();
+                return clientes != null ? Results.Ok(clientes) : Results.NotFound();
             });
         }
     }

@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_3",
+    "RelativePath": "construtechApi/GetClientes",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_0",
     "RelativePath": "construtechApi/GetPessoa/{CPF, Senha}",
     "HttpMethod": "GET",
@@ -15,6 +31,28 @@
       {
         "Name": "Senha",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_2",
+    "RelativePath": "construtechApi/InsertObra",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obra",
+        "Type": "POJO.Obra",
         "IsRequired": true
       }
     ],
