@@ -20,7 +20,7 @@ namespace DAO
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@CodCliente", obra.CodCliente);
-            parameters.Add("@Nome", obra.Nome);
+            parameters.Add("@Nome", obra.NomeObra);
             parameters.Add("@Endereco", obra.Endereco);
             parameters.Add("@Tipo", obra.Tipo);
             parameters.Add("@PrazoExecucao", obra.PrazoExecucao);
@@ -35,6 +35,27 @@ namespace DAO
             catch (Exception ex) { 
                 string e = ex.Message;
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public async Task<List<Obra>> GetObras()
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = "SELECT CodObra, CodCliente, Nome AS NomeObra, Endereco, Tipo, PrazoExecucao, EstagioAtual, Detalhes FROM Obra";
+
+            try
+            {
+                var result = await conexao.QueryAsync<Obra>(sql);
+                return result.ToList();
+            }
+            catch (Exception ex) {
+                string e = ex.Message;
+                return null;
             }
             finally
             {

@@ -22,5 +22,10 @@ namespace BLL
         {
             return await dao.InsertObra(obra);
         }
+
+        public async Task<List<Obra>> GetObras()
+        {
+            return await dao.GetObras();
+        }
     }
 }

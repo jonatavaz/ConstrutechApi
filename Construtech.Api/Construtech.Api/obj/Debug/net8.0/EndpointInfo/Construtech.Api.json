@@ -79,7 +79,7 @@
         }
       }
     },
-    "/construtechApi/GetClientes": {
+    "/construtechApi/GetObras": {
       "get": {
         "tags": [
           "Construtech.Api"
@@ -94,6 +94,44 @@
   },
   "components": {
     "schemas": {
+      "Cliente": {
+        "type": "object",
+        "properties": {
+          "codPessoa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "nascimento": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "contato": {
+            "$ref": "#/components/schemas/Contato"
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/Cliente"
+          },
+          "codCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pessoa": {
+            "$ref": "#/components/schemas/Pessoa"
+          }
+        },
+        "additionalProperties": false
+      },
       "Contato": {
         "type": "object",
         "properties": {
@@ -127,7 +165,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "nome": {
+          "nomeCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomeObra": {
             "type": "string",
             "nullable": true
           },
@@ -178,6 +220,9 @@
           },
           "contato": {
             "$ref": "#/components/schemas/Contato"
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/Cliente"
           }
         },
         "additionalProperties": false

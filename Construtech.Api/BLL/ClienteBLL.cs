@@ -21,5 +21,10 @@ namespace BLL
         {
             return await dao.GetListClientes();
         }
+
+        public async Task<Cliente> GetNomeCliente(string Nome)
+        {
+            return await dao.GetNomeCliente(Nome);
+        }
     }
 }

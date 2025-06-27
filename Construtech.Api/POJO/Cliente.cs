@@ -10,5 +10,6 @@ namespace POJO
     {
         public int CodCliente { get; set; }
 
+        public Pessoa Pessoa {  get; set; }
     }
 }

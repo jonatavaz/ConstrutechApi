@@ -10,5 +10,6 @@
         public Usuario Usuario { get; set; }
 
         public Contato Contato { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

@@ -24,21 +24,40 @@ namespace Construtech.Api.Routes
                 return sucesso == -1 ? Results.Ok("Pessoa cadastrada com sucesso!") : Results.BadRequest("Erro ao criar pessoa.");
             });
 
-            route.MapPost("/InsertObra", async (Obra obra, ObraBLL _oBll) =>
+            route.MapPost("/InsertObra", async (Obra obra, ObraBLL _oBll, ClienteBLL _cBll) =>
             {
+                var sucesso = false;
+
                 if (obra is null)
                     return Results.BadRequest("Objeto Inválido");
 
+                if (obra is not null)
+                {
+                    var result = await _cBll.GetNomeCliente(obra.NomeCliente);
 
-                var sucesso = await _oBll.InsertObra(obra);
+                    if(result.Nome == obra.NomeCliente)
+                    {
+                        obra.CodCliente = result.CodCliente;
+                        sucesso = await _oBll.InsertObra(obra);
+                    }else
+                        return Results.BadRequest("Cliente não encontrado no sistema.");
+                }
+
+                
                 return sucesso == true ? Results.Ok("Obra cadastrada com sucesso!") : Results.BadRequest("Erro ao cadastra a obra.");
             });
 
-            route.MapGet("/GetClientes", async (ClienteBLL _cBll) =>
+            route.MapGet("/GetObras", async (ObraBLL _oBll) =>
             {
-                var clientes = await _cBll.GetListClientes();
-                return clientes != null ? Results.Ok(clientes) : Results.NotFound();
+                var obras = await _oBll.GetObras();
+                return obras != null ? Results.Ok(obras) : Results.NotFound();
             });
+
+            //route.MapGet("/GetClientes", async(ClienteBLL _cBll) =>
+            //{
+            //    var clientes = await _cBll.GetListClientes();
+            //    return clientes != null ? Results.Ok(clientes) : Results.NotFound();
+            //});
         }
     }
 }

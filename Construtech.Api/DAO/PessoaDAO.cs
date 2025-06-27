@@ -39,6 +39,34 @@ namespace DAO
             }
         }
 
+        public async Task<Pessoa> GetNomePessoa(string Nome)
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = @"SELECT P.CodPessoa, P.Nome, C.CodCliente FROM Pessoa P
+                            INNER JOIN Cliente C
+                            ON P.CodPessoa = C.CodPessoa
+                            WHERE P.Nome LIKE '%@Nome%'";
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@Nome", Nome);
+
+            try
+            {
+                var result = await conexao.QueryFirstOrDefaultAsync<Pessoa>(sql, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                string e = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
         public async Task<Usuario> LoginCPF(string CPF)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
