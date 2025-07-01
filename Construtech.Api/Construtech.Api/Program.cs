@@ -13,6 +13,7 @@ builder.Services.AddScoped<PessoaBLL>();
 builder.Services.AddScoped<UsuarioBLL>();
 builder.Services.AddScoped<ObraBLL>();
 builder.Services.AddScoped<ClienteBLL>();
+builder.Services.AddScoped<ObraEquipamentoBLL>();
 #endregion
 
 var app = builder.Build();

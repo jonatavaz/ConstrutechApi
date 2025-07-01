@@ -2,6 +2,22 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_3",
+    "RelativePath": "construtechApi/GetClientes",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_4",
     "RelativePath": "construtechApi/GetObras",
     "HttpMethod": "GET",
     "IsController": false,
@@ -75,6 +91,28 @@
       {
         "Name": "pessoa",
         "Type": "POJO.Pessoa",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_5",
+    "RelativePath": "construtechApi/UpInsertObraEquipamento",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obraEquipamento",
+        "Type": "POJO.ObraEquipamento",
         "IsRequired": true
       }
     ],

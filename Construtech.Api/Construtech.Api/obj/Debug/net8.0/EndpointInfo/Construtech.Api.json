@@ -79,11 +79,45 @@
         }
       }
     },
+    "/construtechApi/GetClientes": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/construtechApi/GetObras": {
       "get": {
         "tags": [
           "Construtech.Api"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/construtechApi/UpInsertObraEquipamento": {
+      "post": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObraEquipamento"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -154,6 +188,30 @@
         },
         "additionalProperties": false
       },
+      "Equipamento": {
+        "type": "object",
+        "properties": {
+          "codEquipamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "custoHora": {
+            "type": "number",
+            "format": "double"
+          },
+          "disponibilidade": {
+            "type": "boolean"
+          },
+          "manutencao": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "Obra": {
         "type": "object",
         "properties": {
@@ -192,6 +250,35 @@
           "detalhes": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObraEquipamento": {
+        "type": "object",
+        "properties": {
+          "codObraEquipamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codObra": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codEquipamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataAlocacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataRetorno": {
+            "type": "string",
+            "nullable": true
+          },
+          "equipamento": {
+            "$ref": "#/components/schemas/Equipamento"
           }
         },
         "additionalProperties": false

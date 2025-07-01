@@ -42,9 +42,14 @@ namespace Construtech.Api.Routes
                     }else
                         return Results.BadRequest("Cliente não encontrado no sistema.");
                 }
-
                 
                 return sucesso == true ? Results.Ok("Obra cadastrada com sucesso!") : Results.BadRequest("Erro ao cadastra a obra.");
+            });
+
+            route.MapGet("/GetClientes", async (ClienteBLL _cBll) =>
+            {
+                var clientes = await _cBll.GetListClientes();
+                return clientes != null ? Results.Ok(clientes) : Results.NotFound();
             });
 
             route.MapGet("/GetObras", async (ObraBLL _oBll) =>
@@ -53,11 +58,28 @@ namespace Construtech.Api.Routes
                 return obras != null ? Results.Ok(obras) : Results.NotFound();
             });
 
-            //route.MapGet("/GetClientes", async(ClienteBLL _cBll) =>
-            //{
-            //    var clientes = await _cBll.GetListClientes();
-            //    return clientes != null ? Results.Ok(clientes) : Results.NotFound();
-            //});
+            route.MapPost("/UpInsertObraEquipamento", async (ObraEquipamento obraEquipamento, ObraEquipamentoBLL _oeBll) =>
+            {
+                var sucesso = false;
+
+                if (obraEquipamento is null)
+                    return Results.BadRequest("Objeto Inválido");
+
+                if (obraEquipamento is not null)
+                {
+                    var result = await _oeBll.GetCodEquipamento(obraEquipamento.Equipamento.Nome);
+
+                    if (result.Nome == obraEquipamento.Equipamento.Nome)
+                    {
+                        obraEquipamento.CodEquipamento = result.CodEquipamento;
+                        sucesso = await _oeBll.UpInsertObraEquipamento(obraEquipamento);
+                    }
+                    else
+                        return Results.BadRequest("Equipamento não encontrado no sistema.");
+                }
+
+                return sucesso == true ? Results.Ok("Equipamento cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao cadastra o equipamento cadastrado a obra.");
+            });
         }
     }
 }
