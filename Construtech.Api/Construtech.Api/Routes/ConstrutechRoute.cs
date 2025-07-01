@@ -58,6 +58,12 @@ namespace Construtech.Api.Routes
                 return obras != null ? Results.Ok(obras) : Results.NotFound();
             });
 
+            route.MapGet("/GetObraEquipamentos", async (ObraEquipamentoBLL _oeBll) =>
+            {
+                var obraEquipamentos = await _oeBll.GetListObraEquipamento();
+                return obraEquipamentos != null ? Results.Ok(obraEquipamentos) : Results.NotFound();
+            });
+
             route.MapPost("/UpInsertObraEquipamento", async (ObraEquipamento obraEquipamento, ObraEquipamentoBLL _oeBll) =>
             {
                 var sucesso = false;

@@ -15,5 +15,7 @@ namespace POJO
         public string? DataRetorno { get; set; }
 
         public Equipamento Equipamento { get; set; }
+
+
     }
 }

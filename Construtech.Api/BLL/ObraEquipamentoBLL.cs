@@ -21,10 +21,13 @@ namespace BLL
             return await dao.GetCodEquipamento(Nome);
         }
 
+        public async Task<List<Equipamento>> GetListObraEquipamento()
+        {
+            return await dao.GetListObraEquipamento();
+        }
+
         public async Task<bool> UpInsertObraEquipamento(ObraEquipamento obraEquipamento)
         {
-
-
             return await dao.UpInsertObraEquipamento(obraEquipamento);
         }
     }

@@ -11,6 +11,9 @@ namespace DAO
 {
     public class ObraEquipamentoDAO
     {
+
+        
+
         public async Task<Equipamento> GetCodEquipamento(string Nome)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
@@ -26,6 +29,35 @@ namespace DAO
                 return result;
             }
             catch (Exception ex) { 
+
+                string e = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public async Task<List<Equipamento>> GetListObraEquipamento()
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = @"SELECT OE.CodObraEquipamento, O.Nome, e.Nome, e.CustoHora, 
+                                CASE 
+                                WHEN e.Disponibilidade = 1 THEN  'Em Estoque' ELSE o.Nome 
+                                END AS DisponibilidadeObra, Manutencao
+                            FROM ObraEquipamento OE 
+                                INNER JOIN Obra O ON OE.CodObra = O.CodObra
+                                INNER JOIN Equipamento E ON OE.CodEquipamento = E.CodEquipamento";
+
+            try
+            {
+                var result = await conexao.QueryAsync<Equipamento>(sql);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
 
                 string e = ex.Message;
                 return null;

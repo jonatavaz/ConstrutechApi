@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_5",
+    "RelativePath": "construtechApi/GetObraEquipamentos",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_4",
     "RelativePath": "construtechApi/GetObras",
     "HttpMethod": "GET",
@@ -104,7 +120,7 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
-    "Method": "\u003CConstrutechRoutes\u003Eb__0_5",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_6",
     "RelativePath": "construtechApi/UpInsertObraEquipamento",
     "HttpMethod": "POST",
     "IsController": false,

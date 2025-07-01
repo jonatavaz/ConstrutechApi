@@ -17,5 +17,8 @@ namespace POJO
         public bool Disponibilidade { get; set; }
 
         public bool Manutencao { get; set; }
+        
+        //EXTRA
+        public string DisponibilidadeObra { get; set; }
     }
 }

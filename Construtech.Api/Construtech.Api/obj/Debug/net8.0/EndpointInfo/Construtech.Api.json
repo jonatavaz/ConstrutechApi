@@ -103,6 +103,18 @@
         }
       }
     },
+    "/construtechApi/GetObraEquipamentos": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/construtechApi/UpInsertObraEquipamento": {
       "post": {
         "tags": [
@@ -208,6 +220,10 @@
           },
           "manutencao": {
             "type": "boolean"
+          },
+          "disponibilidadeObra": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF6208E8-A16F-484C-8CD4-A1A579A7DEF1}|POJO\\POJO.csproj|c:\\sistemas\\construtechapi\\construtech.api\\pojo\\equipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF6208E8-A16F-484C-8CD4-A1A579A7DEF1}|POJO\\POJO.csproj|solutionrelative:pojo\\equipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{36A159F6-F0C6-4301-A61E-72F151517F63}|DAO\\DAO.csproj|c:\\sistemas\\construtechapi\\construtech.api\\dao\\obraequipamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36A159F6-F0C6-4301-A61E-72F151517F63}|DAO\\DAO.csproj|solutionrelative:dao\\obraequipamentodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12BDE712-BE6C-4E75-B9B8-E6B4EF73C659}|Construtech.Api\\Construtech.Api.csproj|c:\\sistemas\\construtechapi\\construtech.api\\construtech.api\\routes\\construtechroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12BDE712-BE6C-4E75-B9B8-E6B4EF73C659}|Construtech.Api\\Construtech.Api.csproj|solutionrelative:construtech.api\\routes\\construtechroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9316FA3-17B6-4C99-8660-65570EC1BC99}|BLL\\BLL.csproj|c:\\sistemas\\construtechapi\\construtech.api\\bll\\obraequipamentobll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9316FA3-17B6-4C99-8660-65570EC1BC99}|BLL\\BLL.csproj|solutionrelative:bll\\obraequipamentobll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF6208E8-A16F-484C-8CD4-A1A579A7DEF1}|POJO\\POJO.csproj|c:\\sistemas\\construtechapi\\construtech.api\\pojo\\obraequipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF6208E8-A16F-484C-8CD4-A1A579A7DEF1}|POJO\\POJO.csproj|solutionrelative:pojo\\obraequipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12BDE712-BE6C-4E75-B9B8-E6B4EF73C659}|Construtech.Api\\Construtech.Api.csproj|c:\\sistemas\\construtechapi\\construtech.api\\construtech.api\\routes\\construtechroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12BDE712-BE6C-4E75-B9B8-E6B4EF73C659}|Construtech.Api\\Construtech.Api.csproj|solutionrelative:construtech.api\\routes\\construtechroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C9316FA3-17B6-4C99-8660-65570EC1BC99}|BLL\\BLL.csproj|c:\\sistemas\\construtechapi\\construtech.api\\bll\\obrabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,33 +62,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ObraEquipamento.cs",
-              "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\POJO\\ObraEquipamento.cs",
-              "RelativeDocumentMoniker": "POJO\\ObraEquipamento.cs",
-              "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\POJO\\ObraEquipamento.cs",
-              "RelativeToolTip": "POJO\\ObraEquipamento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Equipamento.cs",
+              "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\POJO\\Equipamento.cs",
+              "RelativeDocumentMoniker": "POJO\\Equipamento.cs",
+              "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\POJO\\Equipamento.cs",
+              "RelativeToolTip": "POJO\\Equipamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T01:15:49.358Z",
+              "WhenOpened": "2025-07-01T01:36:04.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "ObraEquipamentoBLL.cs",
+              "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\ObraEquipamentoBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\ObraEquipamentoBLL.cs",
+              "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\ObraEquipamentoBLL.cs",
+              "RelativeToolTip": "BLL\\ObraEquipamentoBLL.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAD4vxkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:17:07.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ObraEquipamentoDAO.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\DAO\\ObraEquipamentoDAO.cs",
               "RelativeDocumentMoniker": "DAO\\ObraEquipamentoDAO.cs",
-              "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\DAO\\ObraEquipamentoDAO.cs",
-              "RelativeToolTip": "DAO\\ObraEquipamentoDAO.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAiwD4AAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\DAO\\ObraEquipamentoDAO.cs*",
+              "RelativeToolTip": "DAO\\ObraEquipamentoDAO.cs*",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwCkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T01:12:50.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PessoaBLL.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\PessoaBLL.cs",
               "RelativeDocumentMoniker": "BLL\\PessoaBLL.cs",
@@ -97,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\POJO\\Cliente.cs",
               "RelativeDocumentMoniker": "POJO\\Cliente.cs",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ClienteBLL.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\ClienteBLL.cs",
               "RelativeDocumentMoniker": "BLL\\ClienteBLL.cs",
@@ -122,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UsuarioBLL.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\UsuarioBLL.cs",
               "RelativeDocumentMoniker": "BLL\\UsuarioBLL.cs",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UsuarioDAO.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\DAO\\UsuarioDAO.cs",
               "RelativeDocumentMoniker": "DAO\\UsuarioDAO.cs",
@@ -146,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "PessoaDAO.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\DAO\\PessoaDAO.cs",
               "RelativeDocumentMoniker": "DAO\\PessoaDAO.cs",
@@ -158,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ObraBLL.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\BLL\\ObraBLL.cs",
               "RelativeDocumentMoniker": "BLL\\ObraBLL.cs",
@@ -171,13 +188,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ConstrutechRoute.cs",
               "DocumentMoniker": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\Construtech.Api\\Routes\\ConstrutechRoute.cs",
               "RelativeDocumentMoniker": "Construtech.Api\\Routes\\ConstrutechRoute.cs",
               "ToolTip": "C:\\Sistemas\\ConstrutechApi\\Construtech.Api\\Construtech.Api\\Routes\\ConstrutechRoute.cs",
               "RelativeToolTip": "Construtech.Api\\Routes\\ConstrutechRoute.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAiwEoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAADgvz4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T23:11:33.032Z",
               "EditorCaption": ""
