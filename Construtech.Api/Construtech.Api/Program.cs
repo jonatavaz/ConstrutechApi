@@ -14,6 +14,7 @@ builder.Services.AddScoped<UsuarioBLL>();
 builder.Services.AddScoped<ObraBLL>();
 builder.Services.AddScoped<ClienteBLL>();
 builder.Services.AddScoped<ObraEquipamentoBLL>();
+builder.Services.AddScoped<PedidoMaterialBLL>();
 #endregion
 
 var app = builder.Build();

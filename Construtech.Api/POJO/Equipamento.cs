@@ -10,7 +10,7 @@ namespace POJO
     {
         public int CodEquipamento { get; set; }
 
-        public string Nome { get; set; }
+        public string NomeEquipamento { get; set; }
 
         public decimal CustoHora { get; set; }
 

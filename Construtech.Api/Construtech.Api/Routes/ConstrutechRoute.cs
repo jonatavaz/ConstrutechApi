@@ -58,33 +58,65 @@ namespace Construtech.Api.Routes
                 return obras != null ? Results.Ok(obras) : Results.NotFound();
             });
 
-            route.MapGet("/GetObraEquipamentos", async (ObraEquipamentoBLL _oeBll) =>
+            route.MapGet("/GetObraEquipamentos/{CodObra}", async (int CodObra, ObraEquipamentoBLL _oeBll) =>
             {
-                var obraEquipamentos = await _oeBll.GetListObraEquipamento();
+                var obraEquipamentos = await _oeBll.GetListObraEquipamento(CodObra);
                 return obraEquipamentos != null ? Results.Ok(obraEquipamentos) : Results.NotFound();
             });
 
-            route.MapPost("/UpInsertObraEquipamento", async (ObraEquipamento obraEquipamento, ObraEquipamentoBLL _oeBll) =>
+            //route.MapPost("/UpInsertObraEquipamento", async (ObraEquipamento obraEquipamento, ObraEquipamentoBLL _oeBll) =>
+            //{
+            //    var sucesso = false;
+
+            //    if (obraEquipamento is null)
+            //        return Results.BadRequest("Objeto Inválido");
+
+            //    if (obraEquipamento is not null)
+            //    {
+            //        var result = await _oeBll.GetCodEquipamento(obraEquipamento.Equipamento.NomeEquipamento);
+
+            //        if (result.NomeEquipamento == obraEquipamento.Equipamento.NomeEquipamento)
+            //        {
+            //            obraEquipamento.CodEquipamento = result.CodEquipamento;
+            //            sucesso = await _oeBll.UpInsertObraEquipamento(obraEquipamento);
+            //        }
+            //        else
+            //            return Results.BadRequest("Equipamento não encontrado no sistema.");
+            //    }
+
+            //    return sucesso == true ? Results.Ok("Equipamento cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao cadastra o equipamento cadastrado a obra.");
+            //});
+
+            route.MapPost("/UpInsertPedidoMateriais", async (PedidoMaterial pedidoMaterial, PedidoMaterialBLL _pmBll, ObraBLL _oBll) =>
             {
                 var sucesso = false;
 
-                if (obraEquipamento is null)
+                if (pedidoMaterial is null)
                     return Results.BadRequest("Objeto Inválido");
 
-                if (obraEquipamento is not null)
+                if (pedidoMaterial is not null)
                 {
-                    var result = await _oeBll.GetCodEquipamento(obraEquipamento.Equipamento.Nome);
+                    var result = await _pmBll.GetNomeMatrial(pedidoMaterial.Material.Nome);
 
-                    if (result.Nome == obraEquipamento.Equipamento.Nome)
+                    if (result.Nome == pedidoMaterial.Material.Nome)
                     {
-                        obraEquipamento.CodEquipamento = result.CodEquipamento;
-                        sucesso = await _oeBll.UpInsertObraEquipamento(obraEquipamento);
+                        pedidoMaterial.CodMaterial = result.CodMaterial;
+
+                        var resultMaterial = await _oBll.GetObra(pedidoMaterial.Obra.NomeObra);
+
+                        if(resultMaterial.NomeObra == pedidoMaterial.Obra.NomeObra)
+                        {
+                            pedidoMaterial.CodObra = resultMaterial.CodObra;
+                            sucesso = await _pmBll.UpInsertPedidoMaterial(pedidoMaterial);
+                        }
+                        else
+                            return Results.BadRequest("Obra não encontrada no sistema.");
                     }
                     else
-                        return Results.BadRequest("Equipamento não encontrado no sistema.");
+                        return Results.BadRequest("Material não encontrado no sistema.");
                 }
 
-                return sucesso == true ? Results.Ok("Equipamento cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao cadastra o equipamento cadastrado a obra.");
+                return sucesso == true ? Results.Ok("Pedidos de Materiais cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao solicitar materias.");
             });
         }
     }

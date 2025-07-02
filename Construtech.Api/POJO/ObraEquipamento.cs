@@ -13,9 +13,10 @@ namespace POJO
         public int CodEquipamento { get; set; }
         public string DataAlocacao { get; set; }
         public string? DataRetorno { get; set; }
-
-        public Equipamento Equipamento { get; set; }
-
-
+        public string NomeObra { get; set; }
+        public string NomeEquipamento { get; set; }
+        public decimal CustoHora { get; set; }
+        public string DisponibilidadeObra { get; set; }
+        public bool Manutencao { get; set; }
     }
 }

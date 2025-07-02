@@ -18,11 +18,17 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_5",
-    "RelativePath": "construtechApi/GetObraEquipamentos",
+    "RelativePath": "construtechApi/GetObraEquipamentos/{CodObra}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "CodObra",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",
@@ -121,14 +127,14 @@
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_6",
-    "RelativePath": "construtechApi/UpInsertObraEquipamento",
+    "RelativePath": "construtechApi/UpInsertPedidoMaterials",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "obraEquipamento",
-        "Type": "POJO.ObraEquipamento",
+        "Name": "pedidoMaterial",
+        "Type": "POJO.PedidoMaterial",
         "IsRequired": true
       }
     ],

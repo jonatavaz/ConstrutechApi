@@ -11,9 +11,6 @@ namespace DAO
 {
     public class ObraEquipamentoDAO
     {
-
-        
-
         public async Task<Equipamento> GetCodEquipamento(string Nome)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
@@ -39,21 +36,25 @@ namespace DAO
             }
         }
 
-        public async Task<List<Equipamento>> GetListObraEquipamento()
+        public async Task<List<ObraEquipamento>> GetListObraEquipamento(int CodObra)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
-            string sql = @"SELECT OE.CodObraEquipamento, O.Nome, e.Nome, e.CustoHora, 
+            string sql = @"SELECT OE.CodObraEquipamento, E.CodEquipamento, OE.dataAlocacao, OE.dataRetorno, O.CodObra, O.Nome AS NomeObra, e.Nome AS NomeEquipamento, e.CustoHora, 
                                 CASE 
                                 WHEN e.Disponibilidade = 1 THEN  'Em Estoque' ELSE o.Nome 
                                 END AS DisponibilidadeObra, Manutencao
                             FROM ObraEquipamento OE 
                                 INNER JOIN Obra O ON OE.CodObra = O.CodObra
-                                INNER JOIN Equipamento E ON OE.CodEquipamento = E.CodEquipamento";
+                                INNER JOIN Equipamento E ON OE.CodEquipamento = E.CodEquipamento
+                            WHERE O.CodObra = @CodObra";
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@CodObra", CodObra);
 
             try
             {
-                var result = await conexao.QueryAsync<Equipamento>(sql);
+                var result = await conexao.QueryAsync<ObraEquipamento>(sql, parameters);
                 return result.ToList();
             }
             catch (Exception ex)

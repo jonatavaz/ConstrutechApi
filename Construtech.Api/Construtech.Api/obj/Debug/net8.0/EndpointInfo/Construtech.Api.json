@@ -103,10 +103,21 @@
         }
       }
     },
-    "/construtechApi/GetObraEquipamentos": {
+    "/construtechApi/GetObraEquipamentos/{CodObra}": {
       "get": {
         "tags": [
           "Construtech.Api"
+        ],
+        "parameters": [
+          {
+            "name": "CodObra",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -115,7 +126,7 @@
         }
       }
     },
-    "/construtechApi/UpInsertObraEquipamento": {
+    "/construtechApi/UpInsertPedidoMaterials": {
       "post": {
         "tags": [
           "Construtech.Api"
@@ -124,7 +135,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ObraEquipamento"
+                "$ref": "#/components/schemas/PedidoMaterial"
               }
             }
           },
@@ -200,10 +211,10 @@
         },
         "additionalProperties": false
       },
-      "Equipamento": {
+      "Material": {
         "type": "object",
         "properties": {
-          "codEquipamento": {
+          "codMaterial": {
             "type": "integer",
             "format": "int32"
           },
@@ -211,19 +222,13 @@
             "type": "string",
             "nullable": true
           },
-          "custoHora": {
-            "type": "number",
-            "format": "double"
-          },
-          "disponibilidade": {
-            "type": "boolean"
-          },
-          "manutencao": {
-            "type": "boolean"
-          },
-          "disponibilidadeObra": {
+          "descricao": {
             "type": "string",
             "nullable": true
+          },
+          "unidade": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -270,10 +275,10 @@
         },
         "additionalProperties": false
       },
-      "ObraEquipamento": {
+      "PedidoMaterial": {
         "type": "object",
         "properties": {
-          "codObraEquipamento": {
+          "codPedidoMaterial": {
             "type": "integer",
             "format": "int32"
           },
@@ -281,20 +286,19 @@
             "type": "integer",
             "format": "int32"
           },
-          "codEquipamento": {
+          "codMaterial": {
             "type": "integer",
             "format": "int32"
           },
-          "dataAlocacao": {
-            "type": "string",
-            "nullable": true
+          "quantidade": {
+            "type": "number",
+            "format": "double"
           },
-          "dataRetorno": {
-            "type": "string",
-            "nullable": true
+          "material": {
+            "$ref": "#/components/schemas/Material"
           },
-          "equipamento": {
-            "$ref": "#/components/schemas/Equipamento"
+          "obra": {
+            "$ref": "#/components/schemas/Obra"
           }
         },
         "additionalProperties": false

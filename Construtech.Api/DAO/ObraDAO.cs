@@ -62,5 +62,30 @@ namespace DAO
                 conexao.Close();
             }
         }
+
+        public async Task<Obra> GetObra(string Nome)
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = "SELECT CodObra, Nome AS NomeObra FROM Obra WHERE  Nome Like'%' + @Nome + '%'";
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@Nome", Nome);
+
+            try
+            {
+                var result = await conexao.QueryFirstOrDefaultAsync<Obra>(sql, parameters);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                string e = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

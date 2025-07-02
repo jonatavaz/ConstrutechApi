@@ -27,5 +27,10 @@ namespace BLL
         {
             return await dao.GetObras();
         }
+
+        public async Task<Obra> GetObra(string Nome)
+        {
+            return await dao.GetObra(Nome);
+        }
     }
 }
