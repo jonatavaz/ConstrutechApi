@@ -11,7 +11,7 @@ namespace POJO
         public int CodPedidoMaterial { get; set; }
         public int CodObra { get; set; }
         public int CodMaterial { get; set; }
-        public decimal Quantidade { get; set; }
+        public int Quantidade { get; set; }
 
         public Material Material { get; set; }
         public Obra Obra { get; set; }
