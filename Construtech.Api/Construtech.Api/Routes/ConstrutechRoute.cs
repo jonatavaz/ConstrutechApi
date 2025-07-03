@@ -87,6 +87,12 @@ namespace Construtech.Api.Routes
             //    return sucesso == true ? Results.Ok("Equipamento cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao cadastra o equipamento cadastrado a obra.");
             //});
 
+            route.MapGet("/GetListMateriais", async (MaterialBLL _mBll) =>
+            {
+                var materiais = await _mBll.GetListMateriais();
+                return materiais != null ? Results.Ok(materiais) : Results.NotFound();
+            });
+
             route.MapPost("/UpInsertPedidoMateriais", async (PedidoMaterial pedidoMaterial, PedidoMaterialBLL _pmBll, ObraBLL _oBll) =>
             {
                 var sucesso = false;
@@ -117,6 +123,38 @@ namespace Construtech.Api.Routes
                 }
 
                 return sucesso == true ? Results.Ok("Pedidos de Materiais cadastrado a obra com sucesso!") : Results.BadRequest("Erro ao solicitar materias.");
+            });
+
+            route.MapPost("/InsertPagamento", async (Pagamento pagamento, PagamentoBLL _pBll, FormaPagamentoBLL _fpBll, ObraBLL _oBll) =>
+            {
+                var sucesso = false;
+
+                if (pagamento is null)
+                    return Results.BadRequest("Objeto Inválido");
+
+                if (pagamento is not null)
+                {
+                    var result = await _fpBll.GetFormaPagamento(pagamento.FormaPagamento.Nome);
+
+                    if (result.Nome == pagamento.FormaPagamento.Nome)
+                    {
+                        pagamento.CodFormaPagamento = result.CodFormaPagamento;
+
+                        var resultObra = await _oBll.GetObra(pagamento.Obra.NomeObra);
+
+                        if(resultObra.NomeObra == pagamento.Obra.NomeObra)
+                        {
+                            pagamento.CodObra = resultObra.CodObra;
+                            sucesso = await _pBll.InsertPagamento(pagamento);
+                        }
+                        else
+                            return Results.BadRequest("Obra não encontrada no sistema.");
+                    }
+                    else
+                        return Results.BadRequest("Forma de pagamento não encontrado no sistema.");
+                }
+
+                return sucesso == true ? Results.Ok("Pagamento realizado com sucesso!") : Results.BadRequest("Erro ao realizar pagamento.");
             });
         }
     }

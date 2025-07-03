@@ -8,9 +8,15 @@ namespace POJO
 {
     public class Material
     {
-        public int CodMaterial {  get; set; }
-        public string Nome {  get; set; }
-        public string Descricao {  get; set; }
-        public decimal Unidade {  get; set; }
+        public int CodMaterial { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        
+
+        //Extra
+        public int CodObra {get; set;}
+        public string NomeObra {get; set;}
+
+        public int Unidade { get; set; }
     }
 }

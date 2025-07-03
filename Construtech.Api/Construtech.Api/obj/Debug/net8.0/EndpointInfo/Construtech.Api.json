@@ -126,7 +126,19 @@
         }
       }
     },
-    "/construtechApi/UpInsertPedidoMaterials": {
+    "/construtechApi/GetListMateriais": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/construtechApi/UpInsertPedidoMateriais": {
       "post": {
         "tags": [
           "Construtech.Api"
@@ -136,6 +148,28 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PedidoMaterial"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/construtechApi/InsertPagamento": {
+      "post": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagamento"
               }
             }
           },
@@ -211,6 +245,20 @@
         },
         "additionalProperties": false
       },
+      "FormaPagamento": {
+        "type": "object",
+        "properties": {
+          "codFormaPagamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Material": {
         "type": "object",
         "properties": {
@@ -226,9 +274,17 @@
             "type": "string",
             "nullable": true
           },
+          "codObra": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeObra": {
+            "type": "string",
+            "nullable": true
+          },
           "unidade": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -275,6 +331,38 @@
         },
         "additionalProperties": false
       },
+      "Pagamento": {
+        "type": "object",
+        "properties": {
+          "codPagamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codFormaPagamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codObra": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "valorPago": {
+            "type": "number",
+            "format": "double"
+          },
+          "dataHoraPagamento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "formaPagamento": {
+            "$ref": "#/components/schemas/FormaPagamento"
+          },
+          "obra": {
+            "$ref": "#/components/schemas/Obra"
+          }
+        },
+        "additionalProperties": false
+      },
       "PedidoMaterial": {
         "type": "object",
         "properties": {
@@ -291,8 +379,8 @@
             "format": "int32"
           },
           "quantidade": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32"
           },
           "material": {
             "$ref": "#/components/schemas/Material"

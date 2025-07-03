@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_6",
+    "RelativePath": "construtechApi/GetListMateriais",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_5",
     "RelativePath": "construtechApi/GetObraEquipamentos/{CodObra}",
     "HttpMethod": "GET",
@@ -104,6 +120,28 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_8",
+    "RelativePath": "construtechApi/InsertPagamento",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagamento",
+        "Type": "POJO.Pagamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_1",
     "RelativePath": "construtechApi/InsertPessoa",
     "HttpMethod": "POST",
@@ -126,8 +164,8 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
-    "Method": "\u003CConstrutechRoutes\u003Eb__0_6",
-    "RelativePath": "construtechApi/UpInsertPedidoMaterials",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_7",
+    "RelativePath": "construtechApi/UpInsertPedidoMateriais",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
