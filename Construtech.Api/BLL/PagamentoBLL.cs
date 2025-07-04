@@ -17,6 +17,11 @@ namespace BLL
             dao = new PagamentoDAO();
         }
 
+        public async Task<List<dynamic>> GetListPagamentos()
+        {
+            return await dao.GetListPagamentos();
+        }
+
         public async Task<bool> InsertPagamento(Pagamento pagamento)
         {
             return await dao.InsertPagamento(pagamento);

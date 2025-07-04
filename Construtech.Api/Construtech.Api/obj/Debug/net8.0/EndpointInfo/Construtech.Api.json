@@ -181,6 +181,18 @@
           }
         }
       }
+    },
+    "/construtechApi/GetListPagamentos": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

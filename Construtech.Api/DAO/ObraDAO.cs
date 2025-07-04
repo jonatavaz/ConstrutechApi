@@ -51,7 +51,7 @@ namespace DAO
             try
             {
                 var result = await conexao.QueryAsync<Obra>(sql);
-                return result.ToList();
+                return [.. result];
             }
             catch (Exception ex) {
                 string e = ex.Message;

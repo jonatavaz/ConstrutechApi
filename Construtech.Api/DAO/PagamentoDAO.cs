@@ -11,6 +11,31 @@ namespace DAO
 {
     public class PagamentoDAO
     {
+        public async Task<List<dynamic>> GetListPagamentos()
+        {
+            SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
+
+            string sql = @"SELECT O.Nome, P.DataHoraPagamento, P.ValorPago from Pagamento P
+                                INNER JOIN Obra O
+                                ON P.CodObra = O.CodObra
+                                INNER JOIN FormaPagamento FP
+                                ON P.CodFormaPagamento = Fp.CodFormaPagamento";
+            try
+            {
+                var result = await conexao.QueryAsync<dynamic>(sql);
+                return [.. result];
+            }
+            catch (Exception ex)
+            {
+                string e = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
         public async Task<bool> InsertPagamento(Pagamento pagamento)
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);

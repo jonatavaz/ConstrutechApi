@@ -156,6 +156,12 @@ namespace Construtech.Api.Routes
 
                 return sucesso == true ? Results.Ok("Pagamento realizado com sucesso!") : Results.BadRequest("Erro ao realizar pagamento.");
             });
+
+            route.MapGet("/GetListPagamentos", async (PagamentoBLL _pBll) =>
+            {
+                var materiais = await _pBll.GetListPagamentos();
+                return materiais != null ? Results.Ok(materiais) : Results.NotFound();
+            });
         }
     }
 }

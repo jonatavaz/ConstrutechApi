@@ -22,7 +22,7 @@ namespace DAO
             {
                 await conexao.OpenAsync();
                 var result = await conexao.QueryAsync<Cliente>(sql);
-                return result.ToList();
+                return [.. result];
             
             }catch(Exception ex)
             {
