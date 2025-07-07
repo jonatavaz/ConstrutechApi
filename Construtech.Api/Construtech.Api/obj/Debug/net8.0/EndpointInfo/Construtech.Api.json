@@ -366,6 +366,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
           "formaPagamento": {
             "$ref": "#/components/schemas/FormaPagamento"
           },

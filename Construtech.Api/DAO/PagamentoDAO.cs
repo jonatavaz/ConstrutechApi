@@ -11,7 +11,7 @@ namespace DAO
 {
     public class PagamentoDAO
     {
-        public async Task<List<dynamic>> GetListPagamentos()
+        public async Task<List<Pagamento>> GetListPagamentos()
         {
             SqlConnection conexao = new SqlConnection(_Conexao.StringDeConexao);
 
@@ -22,7 +22,7 @@ namespace DAO
                                 ON P.CodFormaPagamento = Fp.CodFormaPagamento";
             try
             {
-                var result = await conexao.QueryAsync<dynamic>(sql);
+                var result = await conexao.QueryAsync<Pagamento>(sql);
                 return [.. result];
             }
             catch (Exception ex)

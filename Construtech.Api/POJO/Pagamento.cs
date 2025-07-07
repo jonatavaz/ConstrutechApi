@@ -12,7 +12,10 @@ namespace POJO
         public int CodFormaPagamento { get; set; }
         public int CodObra { get; set; }
         public decimal ValorPago { get; set; }
-        public DateTime DataHoraPagamento { get; set; }
+        public string DataHoraPagamento { get; set; }
+
+        //extra
+        public string Nome {get; set; }
 
         public FormaPagamento FormaPagamento { get; set; }
         public Obra Obra { get; set; }
