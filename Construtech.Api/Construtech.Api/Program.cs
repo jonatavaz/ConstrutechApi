@@ -18,6 +18,7 @@ builder.Services.AddScoped<PedidoMaterialBLL>();
 builder.Services.AddScoped<MaterialBLL>();
 builder.Services.AddScoped<FormaPagamentoBLL>();
 builder.Services.AddScoped<PagamentoBLL>();
+builder.Services.AddScoped<FornecedorBLL>();
 #endregion
 
 var app = builder.Build();

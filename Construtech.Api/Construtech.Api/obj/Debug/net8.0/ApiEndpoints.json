@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_10",
+    "RelativePath": "construtechApi/GetListFornecedores",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
     "Method": "\u003CConstrutechRoutes\u003Eb__0_6",
     "RelativePath": "construtechApi/GetListMateriais",
     "HttpMethod": "GET",
@@ -101,6 +117,28 @@
       {
         "Name": "Senha",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Construtech.Api.Routes.ConstrutechRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CConstrutechRoutes\u003Eb__0_11",
+    "RelativePath": "construtechApi/InsertFornecedor",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fornecedor",
+        "Type": "POJO.Fornecedor",
         "IsRequired": true
       }
     ],

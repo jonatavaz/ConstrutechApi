@@ -159,9 +159,26 @@ namespace Construtech.Api.Routes
 
             route.MapGet("/GetListPagamentos", async (PagamentoBLL _pBll) =>
             {
-                var materiais = await _pBll.GetListPagamentos();
-                return materiais != null ? Results.Ok(materiais) : Results.NotFound();
+                var pagamentos = await _pBll.GetListPagamentos();
+                return pagamentos != null ? Results.Ok(pagamentos) : Results.NotFound();
             });
+
+
+            route.MapGet("/GetListFornecedores", async (FornecedorBLL _fBll) =>
+            {
+                var fornecedores = await _fBll.GetListFornecedores();
+                return fornecedores != null ? Results.Ok(fornecedores) : Results.NotFound();
+            });
+
+            route.MapPost("/InsertFornecedor", async (Fornecedor fornecedor, FornecedorBLL _fBll) =>
+            {
+                if (fornecedor is null)
+                    return Results.BadRequest("Objeto Inválido");
+
+                var sucesso = await _fBll.InsertFornecedor(fornecedor);
+                return sucesso == -1 ? Results.Ok("Fornecedor cadastrado com sucesso!") : Results.BadRequest("Erro ao cadastrar fornecedor.");
+            });
+
         }
     }
 }

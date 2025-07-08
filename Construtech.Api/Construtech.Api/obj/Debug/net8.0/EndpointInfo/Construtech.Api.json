@@ -193,6 +193,40 @@
           }
         }
       }
+    },
+    "/construtechApi/GetListFornecedores": {
+      "get": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/construtechApi/InsertFornecedor": {
+      "post": {
+        "tags": [
+          "Construtech.Api"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Fornecedor"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -267,6 +301,37 @@
           "nome": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Fornecedor": {
+        "type": "object",
+        "properties": {
+          "codFornecedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "historico": {
+            "type": "string",
+            "nullable": true
+          },
+          "avaliacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataHora_Cadastro": {
+            "type": "string",
+            "nullable": true
+          },
+          "pessoa": {
+            "$ref": "#/components/schemas/Pessoa"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "contato": {
+            "$ref": "#/components/schemas/Contato"
           }
         },
         "additionalProperties": false
@@ -364,7 +429,7 @@
           },
           "dataHoraPagamento": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
           "nome": {
             "type": "string",
