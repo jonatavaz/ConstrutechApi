@@ -9,7 +9,7 @@
                 string connectionString;
 
                 #if DEBUG
-                    connectionString = @"Server=191.252.220.13;Database=Construtech;User ID=Dev;Password=%!KZ8xQft2we7xwh3;Encrypt=True;TrustServerCertificate=true;";
+                    connectionString = @"Server=;Database=Construtech;User ID=Dev;Password=;Encrypt=True;TrustServerCertificate=true;";
                 #endif  
 
                 return connectionString;
